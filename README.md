@@ -2,6 +2,27 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Getting Started
 
+# CryptoApp
+## Nivedhitha Parthasarathy
+Libraries used => 
+  * axios
+  * redux-saga
+  * react-redux
+  * redux
+  * @react-native-community/netinfo
+
+For executing the build =>
+  
+  npm install 
+  * For Android -
+    npx react-native run-android
+  * For ios -
+    cd ios
+    pod install
+    cd ..
+    npx react-native run-ios
+
+
 > **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
 
 ## Step 1: Start Metro
