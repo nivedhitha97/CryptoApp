@@ -31,6 +31,7 @@ const HomeStyle = StyleSheet.create({
   },
   currencyItem: {
     flexDirection: 'row',
+    flex: 1,
     margin: 20,
     marginBottom: 10,
     backgroundColor: 'white',
@@ -44,6 +45,7 @@ const HomeStyle = StyleSheet.create({
   },
   itemContainer: {
     flexDirection: 'row',
+    flex: 0.9,
   },
   iconStyle: {
     height: 70,
@@ -54,17 +56,17 @@ const HomeStyle = StyleSheet.create({
     resizeMode: 'contain',
   },
   nameContainer: {
-    marginLeft: 20,
+    marginLeft: 10,
     justifyContent: 'center',
   },
   symbolText: {
     textAlign: 'left',
     fontWeight: 700,
-    fontSize: 20,
+    fontSize: 16,
   },
   nameText: {
     textAlign: 'left',
-    fontSize: 16,
+    fontSize: 14,
     marginTop: 7,
     color: '#83878C',
   },
@@ -72,15 +74,16 @@ const HomeStyle = StyleSheet.create({
     paddingRight: 20,
     paddingLeft: 20,
     justifyContent: 'center',
+    flex: 0.4,
   },
   priceText: {
     textAlign: 'right',
     fontWeight: 700,
-    fontSize: 20,
+    fontSize: 16,
   },
   priceChangeText: {
     textAlign: 'right',
-    fontSize: 16,
+    fontSize: 14,
     marginTop: 7,
   },
 });

@@ -7,7 +7,9 @@ export const getApi = async () => {
   try {
     const networkState = await NetInfo.fetch();
     // Check network connectivity
+    console.log('network state ', networkState.isConnected);
     if (!networkState.isConnected) {
+      console.log('NetworkReachabilityError');
       return Promise.reject(new Error('NetworkReachabilityError'));
     }
     return new Promise(async (resolve, reject) => {

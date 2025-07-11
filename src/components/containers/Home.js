@@ -14,6 +14,7 @@ function Home({}) {
   const [currencyList, setCurrencyList] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [isSearch, setSearch] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -55,6 +56,10 @@ function Home({}) {
     getCurrencyListPullRefresh();
   };
 
+  const searchData = () => {
+    setSearch(!isSearch);
+  };
+
   return (
     <>
       {loading ? (
@@ -68,6 +73,9 @@ function Home({}) {
           currencyList={currencyList}
           onRefresh={onRefresh}
           isFetching={isFetching}
+          isSearch={isSearch}
+          searchData={searchData}
+          setSearch={setSearch}
         />
       )}
     </>

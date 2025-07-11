@@ -3,18 +3,20 @@ import {API_URL} from './ApiConstants';
 import {
   convertTimeToSeconds,
   convertTimeToMilliSeconds,
-} from '../../utils.js/constants';
+} from '../../utils/constants';
 
 const axiosIns = axios.create({
-  timeout: 100000,
+  // timeout: 100000,
   baseURL: API_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
+  // headers: {
+  //   'Content-Type': 'application/json',
+  //   'Accept': 'application/json',
+  // },
 });
 axiosIns.interceptors.request.use(
   async config => {
     config.metadata = {startTime: new Date()};
+    console.log(config);
     return config;
   },
   error => {
@@ -24,6 +26,7 @@ axiosIns.interceptors.request.use(
 axiosIns.interceptors.response.use(
   async response => {
     // Handle response here
+    console.log(response);
     response.config.metadata.endTime = new Date();
     response.duration =
       response.config.metadata.endTime - response.config.metadata.startTime;
@@ -36,6 +39,7 @@ axiosIns.interceptors.response.use(
         convertTimeToMilliSeconds(response.duration) +
         ' seconds',
     );
+    console.log('response ---> ', response);
     return response;
   },
   async function (error) {
